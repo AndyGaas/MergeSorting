@@ -11,7 +11,8 @@ public class SortMerge {
         File fileOne = new File("C:\\Projects\\MergeSorting\\in1.txt");
 
         try {
-            BufferedReader bfr = new BufferedReader(new FileReader(fileOne));
+            try (BufferedReader bfr = new BufferedReader(new FileReader(fileOne))) {
+            }
             String name = bufferedReader.readLine();
             String line;
         } catch (FileNotFoundException error) {
