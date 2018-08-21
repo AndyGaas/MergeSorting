@@ -1,29 +1,60 @@
 package java;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 public class SortMerge {
-    public static void main(String[] args) throws IOException {
-        File fileOne = new File("C:\\Projects\\MergeSorting\\in1.txt");
-        File fileTwo = new File("C:\\Projects\\MergeSorting\\in2.txt");
-        File fileThree = new File("C:\\Projects\\MergeSorting\\in3.txt");
-
-
-        // try {
-        //     try (BufferedReader bfr = new BufferedReader(new FileReader(fileOne))) {
-        //     }
-        //     String name = bufferedReader.readLine();
-        //     String line;
-        // } catch (FileNotFoundException error) {
-        //     error.printStackTrace();
-        // } finally {
-        //     bufferedReader.close();
-        // }
-
-        // System.out.println(Arrays.toString(array));
+    public static void main(String[] args) {
+        // System.out.println(exists("C:\\Projects\\MergeSorting\\src\\resources\\out.txt"));
         // mergeSort(array);
         // System.out.println(Arrays.toString(array));
+    }
+
+    private static void exists(String fileName) throws FileNotFoundException {
+        File file = new File(fileName);
+        if (!file.exists()) {
+            throw new FileNotFoundException(file.getName());
+        }
+    }
+
+    public static String read(String fileName) throws FileNotFoundException {
+        StringBuilder stringBuilder = new StringBuilder();
+
+        exists(fileName);
+
+        try {
+            BufferedReader bufferedReader = new BufferedReader(
+                    new FileReader("C:\\Projects\\MergeSorting\\src\\resources\\in1.txt"));
+            try {
+                String str;
+                while ((str = bufferedReader.readLine()) != null) {
+                    stringBuilder.append(str);
+                    stringBuilder.append("\n");
+                }
+            } finally {
+                bufferedReader.close();
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return stringBuilder.toString();
+    }
+
+    public static void write(String fileName, String text) {
+        File file = new File(fileName);
+        try {
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+            PrintWriter out = new PrintWriter(file.getAbsoluteFile());
+
+            try {
+                out.print(text);
+            } finally {
+                out.close();
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private static void mergeSort(int[] array) {
