@@ -1,0 +1,8 @@
+
+_squid:S1075"ARefactor your code to get this URI from a customizable parameter.(ÊÄ8¯­éÕ,
+nsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(õàŸñüÿÿÿÿ8¯­éÕ,
+[
+squid:S106"9Replace this use of System.out or System.err by a logger.(æ„ßÿÿÿÿÿ8¯­éÕ,
+Gsquid:S1481")Remove this unused "name" local variable.(µû§8¯­éÕ,
+Fsquid:S1481")Remove this unused "line" local variable.(çäªq8¯­éÕ,
+Msquid:S00108")Either remove or fill this block of code.(ª¶íåøÿÿÿÿ8¯­éÕ,

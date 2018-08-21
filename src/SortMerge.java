@@ -7,8 +7,10 @@ import java.io.InputStreamReader;
 
 public class SortMerge {
     public static void main(String[] args) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         File fileOne = new File("C:\\Projects\\MergeSorting\\in1.txt");
+        File fileTwo = new File("C:\\Projects\\MergeSorting\\in2.txt");
+        File fileThree = new File("C:\\Projects\\MergeSorting\\in3.txt");
+
 
         try {
             try (BufferedReader bfr = new BufferedReader(new FileReader(fileOne))) {
@@ -16,7 +18,7 @@ public class SortMerge {
             String name = bufferedReader.readLine();
             String line;
         } catch (FileNotFoundException error) {
-            System.out.println("Ошибка: " + error);
+            error.printStackTrace();
         } finally {
             bufferedReader.close();
         }
