@@ -1,3 +1,5 @@
+package Java;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -12,16 +14,16 @@ public class SortMerge {
         File fileThree = new File("C:\\Projects\\MergeSorting\\in3.txt");
 
 
-        try {
-            try (BufferedReader bfr = new BufferedReader(new FileReader(fileOne))) {
-            }
-            String name = bufferedReader.readLine();
-            String line;
-        } catch (FileNotFoundException error) {
-            error.printStackTrace();
-        } finally {
-            bufferedReader.close();
-        }
+        // try {
+        //     try (BufferedReader bfr = new BufferedReader(new FileReader(fileOne))) {
+        //     }
+        //     String name = bufferedReader.readLine();
+        //     String line;
+        // } catch (FileNotFoundException error) {
+        //     error.printStackTrace();
+        // } finally {
+        //     bufferedReader.close();
+        // }
 
         // System.out.println(Arrays.toString(array));
         // mergeSort(array);
